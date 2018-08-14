@@ -6,8 +6,8 @@
 
 FROM cmelab/mbuild
 
-RUN conda install -y -c conda-forge hoomd -c glotzer gsd frued signac signac-flow fresnel  && \
+RUN conda install -y -c glotzer -c conda-forge -c cmelab hoomd_dybond gsd freud signac signac-flow fresnel  && \
     conda clean -tipsy && \
-    pip install pip install git+https://bitbucket.org/cmelab/cme_utils.git
+    pip install  --no-cache-dir git+https://bitbucket.org/cmelab/cme_utils.git
 
 CMD jupyter notebook --port=8888 --ip='*' --no-browser --notebook-dir=/home/ --allow-root --NotebookApp.iopub_data_rate_limit=100000000

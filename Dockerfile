@@ -10,4 +10,12 @@ RUN conda install -y -c glotzer -c conda-forge -c cmelab hoomd_dybond gsd freud 
     conda clean -tipsy && \
     pip install  --no-cache-dir git+https://bitbucket.org/cmelab/cme_utils.git
 
-CMD jupyter notebook --port=8888 --ip='*' --no-browser --notebook-dir=/home/ --allow-root --NotebookApp.iopub_data_rate_limit=100000000
+RUN adduser -G root -S jovyan && \
+    chown -R jovyan /opt/conda/ /home/jovyan
+ENV NB_USER jovyan
+USER $NB_USER
+ENV XDG_CACHE_HOME /home/$NB_USER/.cache/
+RUN MPLBACKEND=Agg $CONDA_DIR/bin/python -c "import matplotlib.pyplot"
+
+
+CMD jupyter notebook --port=8888 --ip='*' --no-browser --notebook-dir=/home/jovyan --NotebookApp.iopub_data_rate_limit=100000000

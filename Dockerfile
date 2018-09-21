@@ -19,4 +19,5 @@ RUN MPLBACKEND=Agg $CONDA_DIR/bin/python -c "import matplotlib.pyplot"
 WORKDIR /home/jovyan
 ADD notebooks/* /home/jovyan/
 ADD swc_files/ /home/jovyan/
+ADD dotfiles/* /home/jovyan/
 CMD jupyter notebook --port=8888 --ip='*' --no-browser --notebook-dir=/home/jovyan --NotebookApp.iopub_data_rate_limit=100000000

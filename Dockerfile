@@ -17,7 +17,7 @@ USER $NB_USER
 ENV XDG_CACHE_HOME /home/$NB_USER/.cache/
 RUN MPLBACKEND=Agg $CONDA_DIR/bin/python -c "import matplotlib.pyplot"
 WORKDIR /home/jovyan
-ADD notebooks/* /home/jovyan/
-ADD swc_files/ /home/jovyan/
-ADD dotfiles/* /home/jovyan/
+ADD --chown=jovyan:jovyan notebooks/* /home/jovyan/
+ADD --chown=jovyan:jovyan swc_files/ /home/jovyan/
+ADD --chown=jovyan:jovyan dotfiles/* /home/jovyan/
 CMD jupyter notebook --port=8888 --ip='*' --no-browser --notebook-dir=/home/jovyan --NotebookApp.iopub_data_rate_limit=100000000

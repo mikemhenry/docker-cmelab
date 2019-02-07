@@ -3,6 +3,8 @@
 
 # How to run?
 # docker run --rm -itp 8888:8888 cmelab/general:latest jupyter notebook --notebook-dir=/home/ --ip='*' --port=8888 --no-browser --allow-root
+# How to run just like it'll appear on codelab (or elsewhere)
+# docker run --rm -itp 8888:8888 cmelab/general:latest jupyter notebook --notebook-dir=/home/jovyan --ip='*' --port=8888 --no-browser --allow-root
 
 FROM cmelab/mbuild
 

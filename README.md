@@ -1,3 +1,5 @@
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/mikemhenry/docker-cmelab/master)
+
 # What is on this image?
 
 [Docker image](https://hub.docker.com/r/cmelab/docker-cmelab/) with python 3.6, hoomd, foyer, mbuild, cme_utils, numpy, scipy, signac, signac-flow, freud, fresnel, and more!

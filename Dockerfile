@@ -9,7 +9,7 @@
 FROM cmelab/mbuild
 
 RUN apk update && \
-    apk add nano less R R-dev && \
+    apk add vim nano less R R-dev && \
     conda install -y -c conda-forge hoomd gsd freud signac signac-flow fresnel  && \
     conda clean -tipsy && \
     pip install  --no-cache-dir git+https://bitbucket.org/cmelab/cme_utils.git
